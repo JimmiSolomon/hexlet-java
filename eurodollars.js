@@ -1,0 +1,1 @@
+const eurosCount = 100;
