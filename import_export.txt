@@ -1,0 +1,43 @@
+Импорт и Экспорт модулей JavaScript
+ 
+Импорт - это значит заглянуть в другой файл, и взять от туда то что нужно через команду:
+import { surfaceArea, square } from './math.js'; 
+'./math.js' - означает взыть из файла math.js Расположенного в той же (текущей) директории.
+ 
+Экспорт - это передача чего либо в другое место. 
+Поставьте export перед тем, что вы хотите экспортировать. Такая операция сделает это импортируемым куда угодно:
+Пример:
+export const pi = 3.14;
+exprot const e = 2.718;
+ 
+команда
+exprort { pi, e, square, surfaceArea};
+позволяет экспортировать сразу несколько значений. Все что нужно, просто добавляем в фигурные скобки
+ 
+Чтобы импортировать сразу неколько значений в импорт, пишем все что нужно также в фигурные скобки 
+import { surfaceArea, square, pi, e } from './math.js';
+ 
+Или импортировать все сразу через команду:
+import * as mathematics from './math.js';
+Это значит "импортировать весь модуль  и назвать его mathematics в этом модуле", вот почему
+ к импортированным сущностям обращение происходит через mathematics, например, mathematics.surfaceArea:
+ пример в коде:
+ 
+ import * as mathematics from './math.js';
+ 
+const surfaceOfMars = mathematics.surfaceArea(3390);
+const surfaceOfMercury = mathematics.surfaceArea(2440);
+const yearSquared = mathematics.square(2017);
+ 
+Экспорт по умолчанию
+ 
+С помощью него, вы можете экспортировать только что-то одно. Но экспортируемую по умолчанию вещь проще 
+импортировать
+ 
+export default surfaceArea;
+ 
+Импорт по умолчанию выглядит вот так:
+ 
+import surfaceArea from './math.js';
+ 
+const surfaceOfMars = surfaceArea(3390);
